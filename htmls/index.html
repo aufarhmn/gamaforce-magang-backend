@@ -66,6 +66,9 @@
                 '/misi', {
                     namaMisi:(missionName),
                     geoJSON: JSON.stringify(editableLayers.toGeoJSON())
+                },
+                (data) => {
+                window.location.reload()
                 }
             )
         }
