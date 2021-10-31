@@ -1,5 +1,4 @@
-# Magang Git
+Magang GAMAFORCE 
 
-halo
-
-ini repo magang git
+Basic routing that can edit some layers on map. 
+Made this to fulfill internship program GAMAFORCE.
