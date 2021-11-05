@@ -46,30 +46,5 @@ router.post('/', function(req, res, next) {
         console.log(`Row(s) deleted`);
       })
   })
-
-    /*router.get('/delete/;id', (req, res, next) => {
-      var planid = [];
-      planid.push(String(req.params.planid));
-      console.log(planid);
-      var sql = 'DELETE FROM hotel WHERE planId = ?';
   
-      conn.query(sql, idHotel, (err, result, field) => {
-          if (err) {
-              res.send({
-                  'code': 400,
-                  'faild': 'error ocurred Eliminar'
-              });
-          } else {
-              console.log('deleted ' + result.affectedRows + ' rows');
-              res.redirect('/root/hoteles/1');
-          }
-      });
-  }); 
-    */
-
-
-    // perintah untuk delete plan dengan id tersebut
-    // pakai query DELETE
-    // db.run()
-
 module.exports = router;
