@@ -28,13 +28,17 @@
     </table>
 
     <div>
-        Note:
+        
         <ul>
+            <p>Note:</p>
             <li>
-                X  hide mission
+                X  hide/unshow mission
             </li>
             <li>
                 V  save edited mission
+            </li>
+            <li>
+                You can directly edit mission with draw control
             </li>
         </ul>
     </div>
@@ -71,7 +75,6 @@
 <script>
     var missions;
     $.get("/misi", (data) => {
-        console.log(data)
         missions = data;
         data.forEach(element => {
             $("#missionlist").append(`<tr>
@@ -79,6 +82,7 @@
             <td>${element.planName}</td>
             <td><button onclick="showMission(${element.planId})" class = "btn-show">Show Mission</button></td>
             <td><button onclick="noice(${element.planId})" class="hide" id="hide${element.planId}">X</button></td>
+            <td><button onclick="save(${element.planId})" class="hide" id="save${element.planId}">V</button></td>
             </tr>`)
         }
         );
@@ -88,6 +92,7 @@
 
     function showMission(planId){
         $("#hide" +planId).toggleClass("hide")
+        $("#save" +planId).toggleClass("hide")
         $(".btn-show").prop( "disabled", true )
         const geoJSON = missions.find(mission => mission.planId == planId).g3wp;
         data = JSON.parse(geoJSON);
@@ -98,11 +103,30 @@
 
     function noice(param){
         $("#hide" +param).toggleClass("hide")
+        $("#save" +param).toggleClass("hide")
         $(".btn-show").prop( "disabled", false )
 
 
         editableLayers.getLayers().forEach(function(layer) {
-            map.removeLayer(layer);
+            editableLayers.removeLayer(layer);
+        });
+    }
+
+    function save(param){
+        
+        let newMission = missions.find(mission => mission.planId == param)
+        newMission.g3wp = JSON.stringify(editableLayers.toGeoJSON())
+
+        $.ajax({
+            type: "POST",
+            url: "mymission/updatemission",
+            data: newMission,
+            success: function(msg){
+                 alert( "Mission Updated");
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Something wrong");
+            }
         });
     }
 
