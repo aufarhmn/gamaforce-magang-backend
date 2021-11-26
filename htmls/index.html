@@ -4,33 +4,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
     integrity="sha512-gc3xjCmIy673V6MyOAZhIW93xhM9ei1I+gLbmFjUHIjocENRsLX/QUE1htk5q1XV2D/iie/VQ8DXI6Vu8bexvQ=="
     crossorigin="anonymous" referrerpolicy="no">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-<form action="/misi" method="post">
-    Nama Misi: <input type="text" name='namaMisi'>
+    <header>
+        <h1 class="title">GCS Kelompok 1</h1>
+    </header>
+    <form action="/misi" method="post">
+        <div class="forminput">
+            <p class="sub">INPUT MISI</p> 
+            Nama Misi: <input type="text" name='namaMisi'>
+            <br>
+            Geo JSON:<input type="text" name="geoJSON">
+            <br>
+            <button type="submit"> Submit </button>
+        </div>
+        
+    </form>
+    
+    
+    <div id="map" style="height: 700px;"></div>
+    
     <br>
-    GeoJSON: <input type="text" name="geoJSON">
+    <div class="auto">
+        <button   onclick="saveToDatabase()"> Auto Save Mission </button>
+    </div>
+    
     <br>
-    <button type="submit"> Submit </button>
-    <br>
-</form>
-
-<button onclick="saveToDatabase()"> Save Mission </button>
-
-<div id="map" style="height: 500px;"></div>
-
-<br>
-<h1>List Misi</h1>
-<ul id='listMisi'></ul>
-
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js" integrity="sha512-ozq8xQKq6urvuU6jNgkfqAmT7jKN2XumbrX1JiB3TnF7tI48DPI4Gy1GXKD/V3EExgAs1V+pRO7vwtS1LHg0Gw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    <div class="listmisi">
+        <h1  >List Misi</h1>
+        <br>
+        <ul id='listMisi'></ul>
+        
+        <button onclick="window.location.href='/mymission'">lihat misi</button>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js" integrity="sha512-ozq8xQKq6urvuU6jNgkfqAmT7jKN2XumbrX1JiB3TnF7tI48DPI4Gy1GXKD/V3EExgAs1V+pRO7vwtS1LHg0Gw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-<script>
-    fetch('/misi')
+    
+    <script>
+        fetch('/misi')
         .then(data => {
             data.json().then(resp => {
                 resp.forEach(element => {
