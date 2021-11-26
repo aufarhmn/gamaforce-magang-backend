@@ -12,37 +12,41 @@
     <title>My Mission</title>
 </head>
 <body>
-    <h1>My Mission</h1>
-    <h2>Saved Mission</h2>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Mission ID</th>
-                <th>Mission Name</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody id="missionlist">
-        </tbody>
-    </table>
-
-    <div>
-        
-        <ul>
-            <p>Note:</p>
-            <li>
-                X  hide/unshow mission
-            </li>
-            <li>
-                V  save edited mission
-            </li>
-            <li>
-                You can directly edit mission with draw control
-            </li>
-        </ul>
+    <header>
+        <h1>My Mission</h1>
+    </header>
+    
+    <div class="data">
+        <h2>Saved Mission</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mission ID</th>
+                    <th>Mission Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="missionlist">
+            </tbody>
+        </table>
+        <br>
+        <div>
+            
+            <ul>
+                <p>Note:</p>
+                <li>
+                    X  hide/unshow mission
+                </li>
+                <li>
+                    V  save edited mission
+                </li>
+                <li>
+                    You can directly edit mission with draw control
+                </li>
+            </ul>
+        </div>
     </div>
-    <div id="map" style="height: 500px;"></div>
+    <div id="map" style="height: 700px;"></div>
 </body>
 <!-- load map -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
