@@ -1,0 +1,86 @@
+* {
+  text-decoration: none;
+  margin:0 ;
+  padding:0 ;
+}
+
+body {
+  padding: 0px;
+  margin:0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: wheat;
+}
+
+.title{
+  
+  position: relative;
+ 
+  padding: 30px;
+  text-align: justify;
+  color: white;
+  background-color: #2E4C6D;
+  font: 30px "Arial";
+
+}
+
+.sub{
+  width: 300px;
+  margin:auto ;
+  text-align: center;
+  padding: 10 px ;
+  background-color:  aqua;
+  color: black;
+  border: 5px solid rgb(112, 92, 165);
+  margin-bottom: 10px;
+}
+form{
+  color: black;
+  width: auto;
+  margin:auto;
+  padding: 20px;
+  background-color: #396EB0;
+  text-align: center;
+}
+.forminput{
+  width: 300px;
+  margin:auto;
+  padding: 20px;
+  background-color: honeydew;
+  align-content: center;
+  border-radius: 5px;
+}
+.forminput button{
+ 
+  padding:0px 20px;
+  width: 100px;
+  align-content: center;
+  
+}
+
+.auto{
+  background-color: grey;
+  text-align: center;
+  
+}
+.auto button{
+  background-color: #FC997C;
+  padding: 20px;
+  margin: 5px 0px;
+}
+.listmisi{
+  padding:20px 10px;
+  height: 400px;
+  color: white;
+  background-color: #DADDFC;
+}
+.listmisi h1{
+  padding :30px;
+  background-color: #2E4C6D;
+}
+.listmisi ul{
+  color:black;
+  padding: auto;
+  margin: auto;
+  background-color: aqua;
+  width: auto;
+}

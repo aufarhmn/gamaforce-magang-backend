@@ -1,0 +1,55 @@
+.hide {
+    display: none;
+}
+body {
+    padding: 0px;
+    margin:0px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: wheat;
+  }
+
+header h1{
+position: relative;
+  padding: 30px;
+  text-align: justify;
+  color: white;
+  background-color: #2E4C6D;
+  font: 30px "Arial";
+   
+}
+
+.data{
+    padding: auto;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: aqua;
+    height: auto;
+}
+.data h2{
+    margin: auto;
+    height: auto;
+    margin-top:10px ;
+    padding: 5px;
+    background-color: thistle;
+    border-radius: 1px;
+    width: 200px;
+    
+}
+.data table{
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    padding: 5px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+.data ul{
+    padding: auto;
+    background-color: whitesmoke;
+    text-align: left;
+    width :300px;
+    height :auto;
+    margin:auto;
+    margin-bottom:10px ;
+    border-radius: 5px;
+}
